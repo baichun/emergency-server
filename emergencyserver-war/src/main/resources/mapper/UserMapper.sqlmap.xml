@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.comtom.bc.server.repository.mapper.UserMapper">
+	<select id="queryList" resultType="com.comtom.bc.server.repository.vo.UserDetailVo">
+		SELECT
+		*
+		FROM
+		 aos_sys_user u,aos_sys_user_ext e
+		 WHERE u.`id_`=e.`id_`
+	</select>
+
+	<select id="queryTotal" resultType="int">
+		SELECT
+		count(*)
+		FROM
+		 aos_sys_user u,aos_sys_user_ext e
+		 WHERE u.`id_`=e.`id_`
+	</select>
+
+</mapper>
